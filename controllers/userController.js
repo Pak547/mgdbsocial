@@ -47,7 +47,15 @@ const userController = {
       .catch((err) => res.json(err));
   },
 
-  
+  removeFriend(req, res) {
+    User.findByIdAndUpdate(
+      { _id: req.params.userId },
+      { $pull: { friends: req.params.friendId } },
+      { new: true }
+    )
+      .then((dbUserData) => res.json(dbUserData))
+      .catch((err) => res.json(err));
+  }
 };
 
 module.exports = userController;
