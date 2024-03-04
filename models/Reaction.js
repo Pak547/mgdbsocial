@@ -1,5 +1,4 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const { Schema, model, mongoose } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 
@@ -28,4 +27,4 @@ const reactionSchema = new Schema({
     }
   });
   
-  module.exports = reactionSchema;
+ module.exports = reactionSchema;
