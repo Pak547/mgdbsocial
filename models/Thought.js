@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const dateFormat = require('../utils/dateFormat');
+const reactionSchema = require('./Reaction');
 
 
 const thoughtSchema = new Schema({
@@ -31,5 +33,5 @@ const thoughtSchema = new Schema({
     return this.reactions.length;
   });
   
-  const Thought = mongoose.model('Thought', thoughtSchema);
+ module.exports = thoughtSchema;
   

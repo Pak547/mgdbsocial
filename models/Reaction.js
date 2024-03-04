@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+const dateFormat = require('../utils/dateFormat');
 
 
 const reactionSchema = new Schema({
@@ -27,3 +28,4 @@ const reactionSchema = new Schema({
     }
   });
   
+  module.exports = reactionSchema;

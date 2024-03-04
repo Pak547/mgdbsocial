@@ -29,6 +29,30 @@ const thoughtController = {
         thought.findByIdAndDelete(req.params.id)
             .then(() => res.json({ message: 'Thought deleted' }))
             .catch(err => res.status(500).json(err));
+    },
+    addReaction(req, res) {
+        thought.findByIdAndUpdate(
+            { _id: req.params.thoughtId },
+            { $addToSet: { reactions: req.body } },
+            { new: true }
+        )
+            .then((dbThoughtData) => {
+                if (!dbThoughtData) {
+                    res.status(404).json({ message: 'No thought found with this id!' });
+                    return;
+                }
+                res.json(dbThoughtData);
+            })
+            .catch((err) => res.json(err));
+    },
+    removeReaction(req, res) {
+        thought.findByIdAndUpdate(
+            { _id: req.params.thoughtId },
+            { $pull: { reactions: { reactionId: req.params.reactionId } } },
+            { new: true }
+        )
+            .then((dbThoughtData) => res.json(dbThoughtData))
+            .catch((err) => res.json(err));
     }
 };
 
