@@ -1,4 +1,4 @@
-const { Schema, model, mongoose } = require('mongoose');
+const { Schema, mongoose } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 
