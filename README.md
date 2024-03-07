@@ -1,6 +1,6 @@
 # mgdbsocial
 
-# Social Network API Challenge
+# Social Network
 
 ## Overview
 
