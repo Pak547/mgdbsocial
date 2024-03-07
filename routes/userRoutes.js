@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+// more organized way to write routes
+// help from tutorial https://www.youtube.com/watch?v=fgTGADljAeg
 const {
   getAllUsers,
   getUserById,

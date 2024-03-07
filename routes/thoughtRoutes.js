@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+// help from tutorial https://www.youtube.com/watch?v=fgTGADljAeg
+
 const {
   getAllThoughts,
   getThoughtById,
